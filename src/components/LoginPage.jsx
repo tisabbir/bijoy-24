@@ -7,6 +7,7 @@ const LoginPage = () => {
             This is login page
 
             <Link>Login</Link>
+            <Link onClick={'/register'} >register</Link>
         </div>
     );
 };
