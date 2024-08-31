@@ -45,9 +45,10 @@ const LoginPage = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn text-white btn-primary">Login</button>
               </div>
             </form>
+            <button className="btn mx-8 mb-6 bg-green-600 text-white">Login With Google</button>
           </div>
         </div>
       </div>
