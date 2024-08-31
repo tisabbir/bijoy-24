@@ -13,9 +13,8 @@ export default function RootLayout({ children }) {
     <html lang="en" data-theme='light'>
       
       <body className={inter.className}>
-      <nav>This is nav</nav>
+      
         {children}
-        <footer>This is footer</footer>
         </body>
     </html>
   );
