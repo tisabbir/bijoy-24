@@ -1,6 +1,30 @@
+'use client'
 import React from "react";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import auth from "@/firebase/firebase.config";
 
 const LoginPage = () => {
+
+    const provider = new GoogleAuthProvider();
+
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth,provider)
+        .then(()=>{
+            alert('Google Sign In successful')
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+    }
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(email, password);
+        
+    }
+
   return (
     <div>
       <div className="hero bg-base-200 min-h-screen">
@@ -16,7 +40,7 @@ const LoginPage = () => {
             </p>
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <form className="card-body">
+            <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -25,6 +49,7 @@ const LoginPage = () => {
                   type="email"
                   placeholder="email"
                   className="input input-bordered"
+                  name="email"
                   required
                 />
               </div>
@@ -36,6 +61,7 @@ const LoginPage = () => {
                   type="password"
                   placeholder="password"
                   className="input input-bordered"
+                  name="password"
                   required
                 />
                 <label className="label">
