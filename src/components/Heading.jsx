@@ -4,6 +4,7 @@ const Heading = () => {
     return (
         <div>
             This is my heading
+            <button className='btn'>btn</button>
         </div>
     );
 };
